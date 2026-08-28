@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-95=o93e79$2qq&!fz!bjfc#_wtt#gdt0%e0u!j4m^@bx$(^r!4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['asa-backend-gulh.onrender.com']
 
 
 # Application definition
@@ -137,7 +137,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5000",
     "http://127.0.0.1:5500",
     "http://localhost:5500",
+    "https://asaventa.netlify.app"
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://asaventa.netlify.app"
+]
+CORS_ALLOW_ALL_ORIGINS = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
