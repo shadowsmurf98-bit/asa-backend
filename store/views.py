@@ -8,10 +8,12 @@ from .serializers import CharacterSerializer, TransactionSerializer
 class CharacterListView(generics.ListAPIView):
     queryset = Character.objects.filter(is_sold=False)
     serializer_class = CharacterSerializer
+    permission_classes = [permissions.AllowAny]
 
 class CharacterDetailView(generics.RetrieveAPIView):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+    permission_classes = [permissions.AllowAny]
 
 class WalletView(APIView):
     permission_classes = [permissions.IsAuthenticated]
